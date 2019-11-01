@@ -1,0 +1,74 @@
+.display-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .resp-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .resp-box-container-unit-test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .resp-box {
+    width: 250px;
+    height: 250px;
+    background-color: orange;
+    margin: 10px;
+  }
+  .form-validation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding-top: 30px;
+    flex-direction: column;
+  }
+  
+  .form-validation-section-row {
+    margin: 10px 0px 10px 0px;
+  }
+  
+  .form-validation-section-radio-grp {
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .form-validation-section-radio-grp label {
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+  }
+  
+  .form-validation-section-radio-grp label span {
+    margin-left: 10px;
+  }
+  
+  .display-api-data {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+  }
+  
+  .margin-top {
+    margin-top: 10px;
+  }
+  .margin-all {
+    margin: 10px;
+  }
+  
+  :host ::ng-deep .mat-tab-header {
+    background: rgb(86, 182, 193);
+  }
+  
+  :host ::ng-deep .mat-tab-body-wrapper {
+    /* min-height: 82vh; */
+    /* background: rgb(200, 231, 200); */
+  }

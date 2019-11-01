@@ -1,0 +1,9 @@
+
+        <div *ngIf="responseData" class="bind-container">
+                <p>Title: <span [innerHTML]="responseData?.title"></span></p>
+                <p>Date: <span [innerHTML]="responseData?.date"></span></p>
+                <p>Explanation: <span [innerHTML]="responseData?.explanation"></span></p>
+               <img *ngIf="imgDisplayOption" [src]="responseData?.hdurl" height="100%" width="100%">
+               <img *ngIf="!imgDisplayOption" [src]="responseData?.url" height="100%" width="100%">
+        </div>
+

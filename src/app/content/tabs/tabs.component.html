@@ -1,0 +1,132 @@
+<mat-tab-group>
+        <mat-tab label="Responsive"> 
+            <div class="resp-box-container">
+                           <div class="row display-center">
+                                <div class="col-xs-3">
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                </div>
+                                <div class="col-xs-3">
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                </div>
+                                <div class="col-xs-3">
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                </div>
+                                <div class="col-xs-3">
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                        <div class="resp-box"></div>
+                                </div>
+                          </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Unit Test">
+            <div class="resp-box-container-unit-test">
+                <button class="btn-warning margin-all" (click)="displayName(true)">Click me to display Boy</button>  
+                <button class="btn-warning margin-all"  (click)="displayName(false)">Click me to display Girl</button>  
+                <div class="margin-all">
+                    <h1>{{userName}}</h1>
+                </div>                   
+            </div>
+
+            <!-- <div class="card mb-3">
+                    <h4 class="card-header">Component Communication</h4>
+                    <div class="card-body">
+                        <button (click)="sendMessage()" class="btn btn-primary mr-2">Send Message</button>
+                        <button (click)="clearMessages()" class="btn btn-secondary">Clear Messages</button>
+                    </div>
+            </div>  -->
+
+        </mat-tab>
+        <mat-tab label="Reactive Form Validation">
+<!--The whole content below can be removed with the new code.-->
+            <div class="form-validation-section">
+                <form [formGroup]="angFormGrp">
+                    <div class="form-group form-validation-section-row ">
+                        <label class="center-block">Name:
+                        <input class="" formControlName="name">
+                        </label>
+                    </div>
+                    <div *ngIf="angFormGrp.controls['name'].invalid && (angFormGrp.controls['name'].dirty || angFormGrp.controls['name'].touched)" class="alert-danger">
+                        <div *ngIf="angFormGrp.controls['name'].errors.required">
+                        Name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group form-validation-section-row ">
+                            <label class="center-block">Email:
+                            <input class="" formControlName="email">
+                            </label>
+                        </div>
+                        <div *ngIf="angFormGrp.controls['email'].invalid && (angFormGrp.controls['email'].dirty || angFormGrp.controls['email'].touched)" class="alert-danger">
+                            <div *ngIf="angFormGrp.controls['email'].errors.required">
+                            Email is required.
+                            </div>
+                        </div>
+
+                        <div class="form-group form-validation-section-radio-grp">
+                                        <label>
+                                        <input type="radio" value="true" formControlName="radioBtn">
+                                          <span>Display HD image</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" value="false" formControlName="radioBtn">
+                                          <span>Display Normal image</span>
+                                      </label>
+                            </div>
+                        <div *ngIf="angFormGrp.controls['radioBtn'].invalid && (angFormGrp.controls['radioBtn'].dirty || angFormGrp.controls['radioBtn'].touched)" class="alert-danger">
+                                <div *ngIf="angFormGrp.controls['radioBtn'].errors.required">
+                                Radio Button selection is required.
+                                </div>
+                            </div>
+
+                        <button type="submit" class="btn btn-primary margin-top" [disabled]="!angFormGrp.valid" (click)="onReactiveBtnSubmit(true)">Submit</button>
+                </form>
+            <!-- <p>Form value: {{ angForm.value | json }}</p>
+            <p>Form status: {{ angForm.status | json }}</p> -->
+            </div>
+        </mat-tab>
+        <mat-tab label="Template Form Validation"> 
+                <div class="form-validation-section">
+                        <form #form="ngForm" (ngSubmit)="onReactiveBtnSubmit(false)">
+                                <div class="form-group form-validation-section-row">
+                                    <label class="center-block">Name:
+                                    <input class="" type="text" [(ngModel)]="template.name" name="name" id="name" required>
+                                    </label>
+                                </div>
+                                <div *ngIf="form.invalid && (form.dirty || form.touched) && !template.name" class="alert-danger">
+                                    Name is required.
+                                </div>
+
+                                <div class="form-group form-validation-section-row ">
+                                    <label class="center-block">Email:
+                                    <input class="" type="text" [(ngModel)]="template.email" name="email" id="email" required>
+                                    </label>
+                                </div>
+                                <div *ngIf="form.invalid && (form.dirty || form.touched) && !template.email" class="alert-danger">
+                                    Email is required.
+                                </div>
+
+                                <div class="form-group form-validation-section-radio-grp">
+                                        <label>
+                                        <input type="radio" value="true" [(ngModel)]="template.radioBtn" name="radioBtn" id="radioBtn" required>
+                                          <span>Display HD image</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" value="false" [(ngModel)]="template.radioBtn" name="radioBtn" id="radioBtn" required>
+                                          <span>Display Normal image</span>
+                                      </label>
+                            </div>
+                            <div *ngIf="form.invalid && (form.dirty || form.touched) && !template.radioBtn" class="alert-danger">
+                                Radio Button selection is required.
+                            </div>
+                                <button type="submit" class="btn btn-primary margin-top" [disabled]= "!form.valid">Submit</button>
+                        </form>
+                    </div>
+             </mat-tab>
+      </mat-tab-group>
